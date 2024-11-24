@@ -13,11 +13,11 @@ We will collect a dataset from the website(AI Vs Human Text (kaggle.com)). The d
 ## Solution Approach:
 ### Preprocessing:
 As the other researchers do in the paper review (Campino 2024[1]) we are considering trying their treatments on our dataset.
-(i) removal of special characters and numbers: remove all the special characters in the text such as commas or parentheses. Numbers were also removed from the text. The removal of such characters did not show meaningful differences in the final result as the model is focused on the tokens (i.e.: words) and not on punctuati on, for example
-(ii) convert to lower case: convert the text to lower case to make it completely uniform
-(iii) combine the text into a single line: in case an abstract has several paragraphs, it was assured that all the text fits to a single line
+(i) removal of special characters and numbers: remove all the special characters in the text such as commas or parentheses. Numbers were also removed from the text. The removal of such characters did not show meaningful differences in the final result as the model is focused on the tokens (i.e.: words) and not on punctuati on, for example<br>
+(ii) convert to lower case: convert the text to lower case to make it completely uniform<br>
+(iii) combine the text into a single line: in case an abstract has several paragraphs, it was assured that all the text fits to a single line<br>
 (iv) remove extra spaces: delete any extra spaces between words resulti ng from previous data treatment, leaving a single space between words. In additon, we are going to try if Stop Words and reduce each word to its base form can help our
-models predict better.
+models predict better.<br>
 ## Model Architecture:
 In this project, we aim to compare different models on our dataset to determine which performs best. We will primarily focus on comparing transformer-based models, such as BERT, with non-transformer models like LSTM. Both are well-suited for sequenti al data processing but employ distinct mechanisms for capturing long-range dependencies: transformers rely on attention mechanisms, while LSTMs use gated recurrent units to manage informati on flow over time. This makes their performance comparison insightf ul, as each approach has its strengths and limitations in handling sequence data. LSTM is considered the best choice for benchmarking against transformer models, providing a solid foundation for evaluating the advantages of newer architectures.
 ## Hardware Requirements for Training:
