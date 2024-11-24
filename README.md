@@ -1,6 +1,6 @@
 # AI_Response_Classifier
 Team Member: 
-Hancheng Huang, Yiyang He, Guanghao Huang
+Hancheng Huang, Yiyang He, Guanghao Huang\\
 Introduction:
 This project compare the LSTM model and BERT model on classify if a paragraph is generate by AI or human being.
 Our proposed solution includes training two types of models: a transformer-based model BERT and a non-transformer-based model LSTM. We will fine-tune each model to classify whether the response is generated from human or AI. By comparing their performance, we will determine which model is more accurate for the process of distinguishing.
