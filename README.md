@@ -25,8 +25,8 @@ models predict better.<br>
 
 ## Model Training:
 ### BERT diagrams:
-![image](https://github.com/user-attachments/assets/2f37c2a0-ca6e-47a5-a896-94e6945ae582)
-![image](https://github.com/user-attachments/assets/026f034c-1eb9-4876-accf-82826b0b312d)
+![image](https://github.com/user-attachments/assets/2e81ea01-f22a-4c48-a99b-4f763424e096)
+![97d28f12c64ac7b0fb971e2fc0f4d21](https://github.com/user-attachments/assets/655c6051-6dfe-44ba-80ed-5f8ff382e9b4)
 ![b5b071a31b8f5ada45552e08907b4ad](https://github.com/user-attachments/assets/9e560120-1906-48f2-8ffd-4d41445ed51a)
 ![27babbb4ffa20d81fc1a37d1ab7b05e](https://github.com/user-attachments/assets/02502d3c-60d9-40d1-8bae-cb0008539832)
 ### Hyper-parameters for BERT
