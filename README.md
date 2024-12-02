@@ -29,6 +29,16 @@ models predict better.<br>
 ![97d28f12c64ac7b0fb971e2fc0f4d21](https://github.com/user-attachments/assets/655c6051-6dfe-44ba-80ed-5f8ff382e9b4)
 ![b5b071a31b8f5ada45552e08907b4ad](https://github.com/user-attachments/assets/9e560120-1906-48f2-8ffd-4d41445ed51a)
 ![27babbb4ffa20d81fc1a37d1ab7b05e](https://github.com/user-attachments/assets/02502d3c-60d9-40d1-8bae-cb0008539832)
+
+### LSTM diagrams:
+<img width="876" alt="Screenshot 2024-12-02 at 6 27 03 PM" src="https://github.com/user-attachments/assets/dbd724df-fbf3-4f5a-88a5-689459c4049a">
+
+![image](https://github.com/user-attachments/assets/146ab15d-ea21-499f-9fbc-fabdaf19fbe6)
+![image](https://github.com/user-attachments/assets/f9e08229-8824-4749-a994-c9ba071be25b)
+![image](https://github.com/user-attachments/assets/0d7b5d5c-5c00-4937-9557-e7cd5d3ceb70)
+
+
+
 ### Hyper-parameters for BERT
 Learning rate: We start as a bigger value with alpha 0.01 and find out it is too big that make our loss and accuracy bounce frequently in the graph. Therefore, we slowly descrease its value to 1e-7 and find out there is always a huge gap arround the 4000th step. Thereofre, we set 1e-5 in our final result to balance the overfitting.
 Epoches: For the number of epoches to train the model, we tried from 2 to 5. Since we are able to get a fine result, we pick 3 to balance the overfitting.
