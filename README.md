@@ -16,6 +16,13 @@ As AI-generated content becomes more common and many AI-generated contents are m
 Proposed Solution: Our proposed solution includes training two types of models: a transformer-based model BERT and a non-transformer-based model LSTM. We will fine-tune each model to classify
 whether the response is generated from human or AI. By comparing their performance, we will determine which model is more accurate for the process of distinguishing.
 
+## Pre-requisite:
+python3.9
+pandas-2.2.3
+PyTorch-2.1.0
+sklearn-1.5.2
+matplotlib-3.8.1
+
 ## Data:
 
 ### Data Source:
