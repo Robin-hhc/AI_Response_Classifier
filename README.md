@@ -46,9 +46,9 @@ models predict better.<br>
 
 ### Hyper-parameters
 
-Learning rate: We start as a bigger value with alpha 0.01 and find out it is too big that make our loss and accuracy bounce frequently in the graph. Therefore, we slowly descrease its value to 1e-7 and find out there is always a huge gap arround the 4000th step. Thereofre, we set 1e-5 in our final result to balance the overfitting.
-Epoches: For the number of epoches to train the model, we tried from 2 to 5. Since we are able to get a fine result, we pick 3 to balance the overfitting.
-Weight Decay: For the weight decay, we start with 0.1 to tune and decrease it slowly. It turns out the weights decay does not influence our model much. Therefore, we choose the 0.01 which has the best performance to avoid overfit.
+1. `Learning rate`: We start as a bigger value with alpha 0.01 and find out it is too big that make our loss and accuracy bounce frequently in the graph. Therefore, we slowly descrease its value to 1e-7 and find out there is always a huge gap arround the 4000th step. Thereofre, we set 1e-5 in our final result to balance the overfitting.
+2. `Epoches`: For the number of epoches to train the model, we tried from 2 to 5. Since we are able to get a fine result, we pick 3 to balance the overfitting.
+3. `Weight Decay`: For the weight decay, we start with 0.1 to tune and decrease it slowly. It turns out the weights decay does not influence our model much. Therefore, we choose the 0.01 which has the best performance to avoid overfit.
 
 #### 2. LSTM
 
