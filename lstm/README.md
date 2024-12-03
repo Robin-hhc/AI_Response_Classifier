@@ -2,7 +2,7 @@
 1. **`lstm_model.ipynb`**: Main script responsible for training and testing the dataset. Checkpoints, checkpoints metrics, models, and other model-related meta-data are saved by this script.
 2. **`lstm_prediction.ipynb`**: Prediction script. Uses the model and tokenizer generated and saved from `lstm_model.ipynb`.
 3. **`AI_Human.csv`**: Dataset used for training/testing. Not uploaded to Github due to its size.
-4. **`./model`**: Directory containing model information saved by `lstm_model.ipynb`. Including checkpoint metrics, model, and the tokenizer information. Used by `lstm_prediction.ipynb` for prediction.
+4. **`./model`**: Directory containing model information saved by `lstm_model.ipynb`. Including checkpoint metrics, model, and the tokenizer information. Used by `lstm_prediction.ipynb` for prediction. `lstm_model.pkl` (model file) not provided due to Github's 100MB size limitation.
 5. **`./html_generated`**: Directory containing static HTML of the  `lstm_model.ipynb` and `lstm_prediction.ipynb` scripts after a complete execution. Includes graphs in the  `lstm_model.ipynb`.
 
 # How to run
