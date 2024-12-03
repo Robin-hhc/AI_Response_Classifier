@@ -70,3 +70,8 @@ For the LSTM model, we have a few parameters:
 6. `learning_rate`: Following the BERT model, we found that increasing this value will overshoot the optimal solution as it leads to poor convergence in training. Decreasing the value will also drastically increase the training runtime. We ended up with 1e-4.
 
 ## Result:
+### Similarities:
+Both models exhibit a similar trend, starting with low accuracy and gradually improving over time. During training, both experience a key stage where accuracy drops significantly and then recovers to higher levels. This fluctuation likely reflects the models adjusting and learning to capture the main features of the task.
+### Differences:
+BERT demonstrates a clear advantage in the early stages of training, achieving high accuracy even at the beginning. This is due to its robust pretraining, which allows it to start with a strong understanding of the task. On the other hand, LSTM depends more on high-quality datasets and extended training to achieve similar performance levels.
+
