@@ -20,6 +20,7 @@ whether the response is generated from human or AI. By comparing their performan
 ## Pre-requisite
 
 - Python 3.9+
+- CUDA
 
 Require packages for the two models:
 
@@ -81,6 +82,9 @@ Similarly, since the model file exceeds the Github's file size limit, please dow
 This model is directly generated from `lstm_model.ipynb`. If you want, you may regenerate the model by running this notebook script with `OVERWRITE_MODEL = True` (preferrably with CUDA installed).
 
 **STEP 3**: Run Prediction
+
+> [!NOTE]
+> To run the prediction, CUDA must be installed. In our design, the pickle model file can only be deserialized with CUDA. It cannot be mapped to a CPU through PyTorch.
 
 Under the `lstm/` folder, run the notebook script `lstm_prediction.ipynb` for prediction. The existing notebook outputs demostrates the prediction of a sentence in the last code-block. To predict something else, modify the `text` variable in the last code-block and re-run the notebook file.
 
