@@ -1,34 +1,95 @@
-# AI_Response_Classifier
+# AI Response Classifier
 
-## Team Member:
+## Team Members
 
 Hancheng Huang, Yiyang He, Guanghao Huang
 
-## Introduction:
+## Introduction
 
-### This project compare the LSTM model and BERT model on classify if a paragraph is generate by AI or human being.
+#### This project compare the LSTM model and BERT model on classify if a paragraph is generate by AI or human being.
 
 Our proposed solution includes training two types of models: a transformer-based model BERT and a non-transformer-based model LSTM. We will fine-tune each model to classify whether the response is generated from human or AI. By comparing their performance, we will determine which model is more accurate for the process of distinguishing.
 
-## Problem Statement:
+## Problem Statement
 
 As AI-generated content becomes more common and many AI-generated contents are misused in many places. What’s more, the lack of tools to effectively distinguish response between human and AI-generated causes a risk to integrity, that makes the situation worse. Also, It effects many areas, such as education and customer service. Our goal is trying to train models to solve these issues with high accuracy.
+
 Proposed Solution: Our proposed solution includes training two types of models: a transformer-based model BERT and a non-transformer-based model LSTM. We will fine-tune each model to classify
 whether the response is generated from human or AI. By comparing their performance, we will determine which model is more accurate for the process of distinguishing.
 
-## Pre-requisite:
-python3.9
-pandas-2.2.3
-PyTorch-2.1.0
-sklearn-1.5.2
-matplotlib-3.8.1
+## Pre-requisite
 
-## How to run:
-### BERT:
-Since the model file is large, please download the model zip file by the following link (https://drive.google.com/file/d/1wTPgwMcF6BMfGhS3j3rtgP154l3_GoZp/view?usp=sharing) and unzip it into the BERT folder. <br>
-Under the BERT forder, there are three files BERT.py, inputs.txt and outputs.txt. You can put the text you want to test in the inputs.txt file and run the BERT.py. The output should be generated in the outputs.txt. Notice that the application count the input by rows, so you need to seperate your inputs in different lines if you want to test multiple inputs. There is example inputs and outputs in the inputs.txt and outputs.txt.
+- Python 3.9+
 
-## Data:
+Require packages for the two models:
+
+- BERT: [./bert/requirements.txt](bert/requirements.txt)
+- LSTM: [./lstm/requirements.txt](lstm/requirements.txt)
+
+## How To Run
+
+#### BERT:
+
+**STEP 1**: Dependency Installation
+
+```
+cd bert
+python -m venv bert_venv
+./bert_venv/Script/activate
+pip install -r requirements.txt
+```
+
+<br>
+
+**STEP 2**: Model Download
+
+Since the model file exceeds the Github's file size limit, please please download the following zip file containing the model (`fine_tuned_bert.rar`) and extract it into the `bert/` folder.
+
+- BERT Model: https://drive.google.com/file/d/1wTPgwMcF6BMfGhS3j3rtgP154l3_GoZp/view?usp=sharing
+
+This model is generated from `AIvsHumanBERT.ipynb`.
+
+<br>
+
+**STEP 3**: Run Prediction
+
+Under the `bert/` forder, there are three files:
+
+- `BERT.py`
+- `inputs.txt`
+- `outputs.txt`
+
+You can put the text you want to test in the inputs.txt file and run the `BERT.py`. The output will be generated in the outputs.txt. Notice that the application count the input by rows, so you need to seperate your inputs in different lines if you want to test multiple inputs. There are example inputs and outputs in `inputs.txt` and `outputs.txt`.
+
+### LSTM
+
+**STEP 1**: Dependency Installation
+
+```
+cd lstm
+python -m venv lstm_venv
+./lstm_venv/Script/activate
+pip install -r requirements.txt
+```
+
+**STEP 2**: Model Download
+
+Similarly, since the model file exceeds the Github's file size limit, please download the following pickle file containing the model (`lstm_model.pkl`) and move it into the **`lstm/model/` folder**.
+
+- LSTM Model: https://drive.google.com/file/d/1qFEmO9w77QGWIBciW1LM1F0FYPBQc2tj/view?usp=sharing
+
+This model is directly generated from `lstm_model.ipynb`. If you want, you may regenerate the model by running this notebook script with `OVERWRITE_MODEL = True` (preferrably with CUDA installed).
+
+**STEP 3**: Run Prediction
+
+Under the `lstm/` folder, there is a notebook script called `lstm_prediction.ipynb` for running the predictions using the model downloaded above and the tokenizers provided.
+
+The existing notebook output demostrates the prediction of a sentence in the last code-block. To predict something else, modify the `text` variable in the last code-block and re-run the notebook file.
+
+If you are missing any required files (model and tokenizers), code-block 2 will output a warning, specifying the missing file.
+
+## Data
+
 ### Data Source:
 
 We will collect a dataset from the website(AI Vs Human Text (kaggle.com)). The dataset contains 480000 unique text responses, with each entry classified as human-generated and AI-generated. The dataset includes a feature labeled “# generated” that indicates whether the response is from human(0) or AI(1). The text block contains complete sentences, represented as string data type, which are generated by humans or AI. <br>
@@ -46,7 +107,7 @@ Since fine-tuning doe not require a huge data set for getting an accurate result
 (iv) remove extra spaces: delete any extra spaces between words resulti ng from previous data treatment, leaving a single space between words. In additon, we are going to try if Stop Words and reduce each word to its base form can help our
 models predict better.<br>
 
-## Model Training:
+## Model Training
 
 ### 1. BERT
 
@@ -63,12 +124,6 @@ models predict better.<br>
 
 #### 2. LSTM
 
-<img width="876" alt="Screenshot 2024-12-02 at 6 27 03 PM" src="https://github.com/user-attachments/assets/dbd724df-fbf3-4f5a-88a5-689459c4049a">
-
-![image](https://github.com/user-attachments/assets/146ab15d-ea21-499f-9fbc-fabdaf19fbe6)
-![image](https://github.com/user-attachments/assets/f9e08229-8824-4749-a994-c9ba071be25b)
-![image](https://github.com/user-attachments/assets/0d7b5d5c-5c00-4937-9557-e7cd5d3ceb70)
-
 #### Hyper-parameters
 
 For the LSTM model, we have a few parameters:
@@ -80,9 +135,12 @@ For the LSTM model, we have a few parameters:
 5. `num_epoches`: We set this to the same value as the BERT model for better comparison.
 6. `learning_rate`: Following the BERT model, we found that increasing this value will overshoot the optimal solution as it leads to poor convergence in training. Decreasing the value will also drastically increase the training runtime. We ended up with 1e-4.
 
-## Result:
-### Similarities:
-Both models exhibit a similar trend, starting with low accuracy and gradually improving over time. During training, both experience a key stage where accuracy drops significantly and then recovers to higher levels. This fluctuation likely reflects the models adjusting and learning to capture the main features of the task.
-### Differences:
-BERT demonstrates a clear advantage in the early stages of training, achieving high accuracy even at the beginning. This is due to its robust pretraining, which allows it to start with a strong understanding of the task. On the other hand, LSTM depends more on high-quality datasets and extended training to achieve similar performance levels.
+## Results
 
+### Similarities:
+
+Both models exhibit a similar trend, starting with low accuracy and gradually improving over time. During training, both experience a key stage where accuracy drops significantly and then recovers to higher levels. This fluctuation likely reflects the models adjusting and learning to capture the main features of the task.
+
+### Differences:
+
+BERT demonstrates a clear advantage in the early stages of training, achieving high accuracy even at the beginning. This is due to its robust pretraining, which allows it to start with a strong understanding of the task. On the other hand, LSTM depends more on high-quality datasets and extended training to achieve similar performance levels.
