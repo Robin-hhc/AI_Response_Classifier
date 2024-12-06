@@ -28,7 +28,7 @@ Require packages for the two models:
 
 ## How To Run
 
-#### BERT:
+### 1. BERT
 
 **STEP 1**: Dependency Installation
 
@@ -61,7 +61,7 @@ Under the `bert/` forder, there are three files:
 
 You can put the text you want to test in the inputs.txt file and run the `BERT.py`. The output will be generated in the outputs.txt. Notice that the application count the input by rows, so you need to seperate your inputs in different lines if you want to test multiple inputs. There are example inputs and outputs in `inputs.txt` and `outputs.txt`.
 
-### LSTM
+### 2. LSTM
 
 **STEP 1**: Dependency Installation
 
@@ -82,11 +82,9 @@ This model is directly generated from `lstm_model.ipynb`. If you want, you may r
 
 **STEP 3**: Run Prediction
 
-Under the `lstm/` folder, there is a notebook script called `lstm_prediction.ipynb` for running the predictions using the model downloaded above and the tokenizers provided.
+Under the `lstm/` folder, run the notebook script `lstm_prediction.ipynb` for prediction. The existing notebook outputs demostrates the prediction of a sentence in the last code-block. To predict something else, modify the `text` variable in the last code-block and re-run the notebook file.
 
-The existing notebook output demostrates the prediction of a sentence in the last code-block. To predict something else, modify the `text` variable in the last code-block and re-run the notebook file.
-
-If you are missing any required files (model and tokenizers), code-block 2 will output a warning, specifying the missing file.
+If you are missing any required files (model or tokenizer files), code-block 2 will output a warning.
 
 ## Data
 
@@ -116,13 +114,13 @@ models predict better.<br>
 ![b5b071a31b8f5ada45552e08907b4ad](https://github.com/user-attachments/assets/9e560120-1906-48f2-8ffd-4d41445ed51a)
 ![27babbb4ffa20d81fc1a37d1ab7b05e](https://github.com/user-attachments/assets/02502d3c-60d9-40d1-8bae-cb0008539832)
 
-### Hyper-parameters
+#### Hyper-parameters
 
 1. `Learning rate`: We start as a bigger value with alpha 0.01 and find out it is too big that make our loss and accuracy bounce frequently in the graph. Therefore, we slowly descrease its value to 1e-7 and find out there is always a huge gap arround the 4000th step. Thereofre, we set 1e-5 in our final result to balance the overfitting.
 2. `Epoches`: For the number of epoches to train the model, we tried from 2 to 5. Since we are able to get a fine result, we pick 3 to balance the overfitting.
 3. `Weight Decay`: For the weight decay, we start with 0.1 to tune and decrease it slowly. It turns out the weights decay does not influence our model much. Therefore, we choose the 0.01 which has the best performance to avoid overfit.
 
-#### 2. LSTM
+### 2. LSTM
 
 #### Hyper-parameters
 
