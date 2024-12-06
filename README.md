@@ -33,7 +33,7 @@ Require packages for the two models:
 **STEP 1**: Dependency Installation
 
 ```
-cd bert
+cd bert/
 python -m venv bert_venv
 ./bert_venv/Script/activate
 pip install -r requirements.txt
@@ -66,7 +66,7 @@ You can put the text you want to test in the inputs.txt file and run the `BERT.p
 **STEP 1**: Dependency Installation
 
 ```
-cd lstm
+cd lstm/
 python -m venv lstm_venv
 ./lstm_venv/Script/activate
 pip install -r requirements.txt
