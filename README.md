@@ -122,6 +122,13 @@ models predict better.<br>
 
 ### 2. LSTM
 
+![image](https://github.com/user-attachments/assets/fb3209d7-476e-4904-b6cf-14ea73ca65c8)
+![image](https://github.com/user-attachments/assets/e3131ce0-f58e-4e38-a42c-6c9d81bedc0c)
+![image](https://github.com/user-attachments/assets/ebc5174d-d4c1-44d2-b853-d86b4e959ce2)
+![image](https://github.com/user-attachments/assets/512e4577-d3c9-45f6-a2e7-16a2c25d7e89)
+
+
+
 #### Hyper-parameters
 
 For the LSTM model, we have a few parameters:
