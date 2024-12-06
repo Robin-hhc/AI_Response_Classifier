@@ -20,7 +20,7 @@ whether the response is generated from human or AI. By comparing their performan
 ## Pre-requisite
 
 - Python 3.9+
-- CUDA
+- CUDA Toolkit
 
 Require packages for the two models:
 
